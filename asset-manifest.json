@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/datalogtest/static/css/main.2c611fc7.css",
-    "main.js": "/datalogtest/static/js/main.cd514f99.js",
-    "static/js/787.809af9c3.chunk.js": "/datalogtest/static/js/787.809af9c3.chunk.js",
-    "index.html": "/datalogtest/index.html",
-    "main.2c611fc7.css.map": "/datalogtest/static/css/main.2c611fc7.css.map",
-    "main.cd514f99.js.map": "/datalogtest/static/js/main.cd514f99.js.map",
-    "787.809af9c3.chunk.js.map": "/datalogtest/static/js/787.809af9c3.chunk.js.map"
+    "main.css": "/datadogtest/static/css/main.2c611fc7.css",
+    "main.js": "/datadogtest/static/js/main.998f253a.js",
+    "static/js/787.bd4bcd18.chunk.js": "/datadogtest/static/js/787.bd4bcd18.chunk.js",
+    "index.html": "/datadogtest/index.html",
+    "main.2c611fc7.css.map": "/datadogtest/static/css/main.2c611fc7.css.map",
+    "main.998f253a.js.map": "/datadogtest/static/js/main.998f253a.js.map",
+    "787.bd4bcd18.chunk.js.map": "/datadogtest/static/js/787.bd4bcd18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c611fc7.css",
-    "static/js/main.cd514f99.js"
+    "static/js/main.998f253a.js"
   ]
 }
