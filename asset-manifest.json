@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/datalogtest/static/css/main.2c611fc7.css",
+    "main.js": "/datalogtest/static/js/main.cd514f99.js",
+    "static/js/787.809af9c3.chunk.js": "/datalogtest/static/js/787.809af9c3.chunk.js",
+    "index.html": "/datalogtest/index.html",
+    "main.2c611fc7.css.map": "/datalogtest/static/css/main.2c611fc7.css.map",
+    "main.cd514f99.js.map": "/datalogtest/static/js/main.cd514f99.js.map",
+    "787.809af9c3.chunk.js.map": "/datalogtest/static/js/787.809af9c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c611fc7.css",
+    "static/js/main.cd514f99.js"
+  ]
+}
