@@ -1,23 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [error, setError] = useState(false);
+  const [data, setData] = useState(null);
+  const [username, setUsername] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    fetch(`https://api.github.com/users/${username}`)
+      .then((response) => {
+        if (!response.ok) {
+          setError(`This is an HTTP error: The status is ${response.status}`);
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+        setError(false);
+      })
+      .catch((error) => {
+        console.error("error fetching data:", error);
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="App-header">
+        <h1>GitHub user info</h1>
+        <p>Enter a GitHub username:</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+            placeholder="GitHub username"
+            required
+          />
+          <button type="submit">Get info</button>
+        </form>
+        {!error && data && (
+          <div className="info">
+            <div>
+              <img src={data.avatar_url} alt={data.login}></img>
+            </div>
+            <div>
+              <h4>
+                {data.name} <span>@{data.login}</span>
+              </h4>
+              <p>{data?.bio}</p>
+            </div>
+          </div>
+        )}
+
+        {error && <div className="error">{error}</div>}
+      </main>
     </div>
   );
 }
