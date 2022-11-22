@@ -29,6 +29,27 @@ function App() {
       });
   };
 
+  const handleError = (status) => {
+    fetch(`https://mock.codes/${status}`)
+      .then((response) => {
+        if (!response.ok) {
+          setError(`This is an HTTP error: The status is ${response.status}`);
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+        setError(false);
+      })
+      .catch((error) => {
+        console.error("error fetching data:", error);
+      });
+  };
+
   return (
     <div className="App">
       <main className="App-header">
@@ -44,6 +65,11 @@ function App() {
           />
           <button type="submit">Get info</button>
         </form>
+        <div className="forceErros">
+          <button onClick={() => handleError(500)}>Force error 500</button>
+          <button onClick={() => handleError(403)}>Force error 403</button>
+        </div>
+
         {!error && data && (
           <div className="info">
             <div>
@@ -53,7 +79,7 @@ function App() {
               <h4>
                 {data.name} <span>@{data.login}</span>
               </h4>
-              <p>{data?.bio}</p>
+              <p>{data.bio}</p>
             </div>
           </div>
         )}

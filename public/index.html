@@ -25,6 +25,20 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>DATALOG test</title>
+
+    <script
+      type="text/javascript"
+      src="https://www.datadoghq-browser-agent.com/datadog-logs-v4.js"
+    ></script>
+    <script>
+      window.DD_LOGS &&
+        DD_LOGS.init({
+          clientToken: "pub823c9a0cbdd97b6601962392e9bfb292",
+          site: "datadoghq.com",
+          forwardErrorsToLogs: true,
+          sampleRate: 100,
+        });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
